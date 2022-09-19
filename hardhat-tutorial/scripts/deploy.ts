@@ -1,23 +1,37 @@
+// Deploying to Goerli
 import { ethers } from "hardhat";
 
-async function main() {
-  const currentTimestampInSeconds = Math.round(Date.now() / 1000);
-  const ONE_YEAR_IN_SECS = 365 * 24 * 60 * 60;
-  const unlockTime = currentTimestampInSeconds + ONE_YEAR_IN_SECS;
+const main = async () => {
+    /*
+    A ContractFactory in ethers.js is an abstraction used to deploy new smart contracts,
+    so whitelistContract here is a factory for instances of our Whitelist contract.
+    */
+    const whitelistContract = await ethers.getContractFactory("Whitelist");
+    // also try "const whitelistContract = await ethers.getContract("Whitelist");"
 
-  const lockedAmount = ethers.utils.parseEther("1");
+    // here we deploy the contract
+    const deployedWhitelistContract = await whitelistContract.deploy(10);
+    // 10 is the Maximum number of whitelisted addresses allowed (constructor arg)
 
-  const Lock = await ethers.getContractFactory("Lock");
-  const lock = await Lock.deploy(unlockTime, { value: lockedAmount });
+    // Wait for it to finish deploying
+    await deployedWhitelistContract.deployed();
+    // ** We could also do smth like "await deployedWhitelistContract.deployTransaction.wait(1)"
 
-  await lock.deployed();
+    // print the address of the deployed contract
+    console.log("Whitelist Contract Address:", deployedWhitelistContract.address);
+    // deployed at 0x5C0fb7dB3fA5f562a382efB216df8883e92192B9
 
-  console.log(`Lock with 1 ETH and unlock timestamp ${unlockTime} deployed to ${lock.address}`);
-}
+    // Things we need to deploy:
+    // 1. Goerli network config (in hardhat.config.ts) ✅
+    // 2. Access to the deployer account address (via ethers' getNamedAccounts())
+    // const { deployer } = await getNamedAccounts()
+    // 3. Access to our contract (via ethers' getContractAt)
+    // 4. Deploy func
+};
 
-// We recommend this pattern to be able to use async/await everywhere
-// and properly handle errors.
-main().catch((error) => {
-  console.error(error);
-  process.exitCode = 1;
-});
+main()
+    .then(() => process.exit(0))
+    .catch((error) => {
+        console.error(error);
+        process.exit(1);
+    });

@@ -1,9 +1,9 @@
 import { Contract, providers } from "ethers";
 import type { NextPage } from "next";
 import Head from "next/head";
-import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { abi, WHITELIST_CONTRACT_ADDRESS } from "../constants";
+// @ts-ignore
 import Web3Modal from "web3Modal";
 
 const Home: NextPage = () => {

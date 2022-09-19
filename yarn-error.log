@@ -1,5 +1,5 @@
 Arguments: 
-  /usr/local/bin/node /Users/simasgradeckas/.yarn/bin/yarn.js add @web3modal/types
+  /usr/local/bin/node /Users/simasgradeckas/.yarn/bin/yarn.js add @types/web3modal
 
 PATH: 
   /Users/simasgradeckas/.yarn/bin:/Users/simasgradeckas/.config/yarn/global/node_modules/.bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/simasgradeckas/.yarn/bin:/Users/simasgradeckas/.config/yarn/global/node_modules/.bin
@@ -14,7 +14,7 @@ Platform:
   darwin arm64
 
 Trace: 
-  Error: https://registry.yarnpkg.com/@web3modal%2ftypes: Not found
+  Error: https://registry.yarnpkg.com/@types%2fweb3modal: Not found
       at Request.params.callback [as _callback] (/Users/simasgradeckas/.yarn/lib/cli.js:66145:18)
       at Request.self.callback (/Users/simasgradeckas/.yarn/lib/cli.js:140890:22)
       at Request.emit (node:events:390:28)

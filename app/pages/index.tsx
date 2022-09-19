@@ -3,8 +3,7 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import { useEffect, useRef, useState } from "react";
 import { abi, WHITELIST_CONTRACT_ADDRESS } from "../constants";
-// @ts-ignore
-import Web3Modal from "web3Modal";
+import Web3Modal from "web3modal";
 
 const Home: NextPage = () => {
     // walletConnected keep track of whether the user's wallet is connected or not

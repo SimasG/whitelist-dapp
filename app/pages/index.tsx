@@ -4,6 +4,7 @@ import Head from "next/head";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { abi, WHITELIST_CONTRACT_ADDRESS } from "../constants";
+// @ts-ignore
 import Web3Modal from "Web3Modal";
 
 const Home: NextPage = () => {

@@ -1,0 +1,36 @@
+Arguments: 
+  /usr/local/bin/node /Users/simasgradeckas/.yarn/bin/yarn.js add @web3modal/types
+
+PATH: 
+  /Users/simasgradeckas/.yarn/bin:/Users/simasgradeckas/.config/yarn/global/node_modules/.bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/simasgradeckas/.yarn/bin:/Users/simasgradeckas/.config/yarn/global/node_modules/.bin
+
+Yarn version: 
+  1.22.19
+
+Node version: 
+  16.13.2
+
+Platform: 
+  darwin arm64
+
+Trace: 
+  Error: https://registry.yarnpkg.com/@web3modal%2ftypes: Not found
+      at Request.params.callback [as _callback] (/Users/simasgradeckas/.yarn/lib/cli.js:66145:18)
+      at Request.self.callback (/Users/simasgradeckas/.yarn/lib/cli.js:140890:22)
+      at Request.emit (node:events:390:28)
+      at Request.<anonymous> (/Users/simasgradeckas/.yarn/lib/cli.js:141862:10)
+      at Request.emit (node:events:390:28)
+      at IncomingMessage.<anonymous> (/Users/simasgradeckas/.yarn/lib/cli.js:141784:12)
+      at Object.onceWrapper (node:events:509:28)
+      at IncomingMessage.emit (node:events:402:35)
+      at endReadableNT (node:internal/streams/readable:1343:12)
+      at processTicksAndRejections (node:internal/process/task_queues:83:21)
+
+npm manifest: 
+  No manifest
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
